@@ -809,3 +809,73 @@ ndvi  & 2 & 0 (0.4467) \\
 % %     \item Sorgt dafür das Unterschied von (\acrshort{GT}) Background zu Objekt schlecht eingeschätzt werden können. treten jedoch ohnehin selten in den Confusion Matrizen oder Differenzmatriezn auf.
 % % \end{itemize}
 
+\section{Further Experiments}
+
+% \paragraph{Vergleich der YOLO-Varianten}
+% Im Rahmen dieser Arbeit wurden Experimente auf Basis des DOTA-Datensatzes durchgeführt, um die Leistungsfähigkeit verschiedener YOLO-Versionen zu evaluieren. Hierbei kamen YOLOv3, YOLOv9 und YOLOv12 zum Einsatz, jeweils für 500 Epochen unter sonst identischen Hyperparametern gemäß Tabelle \ref{tab:hyperparameters}. YOLOv3 stellt dabei die älteste Variante dar, während YOLOv12 die neueste Architektur aus dem Jahr 2024 repräsentiert; die architektonischen Unterschiede werden in Abschnitt \ref{sec:milestone_yolo} detailliert beschrieben. Die Evaluation der Modelle erfolgte anhand des mAP$_{50-95}$-Metrics, wobei YOLOv3 einen mittleren Wert von 0,34 erreichte (vgl. Abbildung \ref{sub@fig:yolov3_dota}). Im Vergleich dazu zeigte YOLOv12 eine deutlich verbesserte Leistung von 0,40 (\ref{sub@fig:yolov12_dota}), während YOLOv9 den besten Wert von 0,42 erzielte (vgl. Abbildung \ref{fig:DOTA_train_values}). Diese Ergebnisse verdeutlichen eine kontinuierliche Leistungssteigerung mit den neueren YOLO-Versionen.
+
+% \paragraph{Einfluss spektraler Permutationen}
+% Darüber hinaus wurden Experimente zur Nutzung unterschiedlicher spektraler Permutationen (RGBIR, RGB und RGIR) durchgeführt. Hierbei wurden die Modelle YOLOv9 und YOLOv12 jeweils von Grund auf (scratch) trainiert, unter sonst unveränderten Hyperparametern gemäß Tabelle \ref{tab:hyperparameters}. Es zeigte sich, dass alle drei Permutationen beim Training mit dem DOTA-Datensatz eine bessere Performance erzielten als vortrainierte Modelle. Zwischen RGBIR und RGIR konnten bei beiden YOLO-Versionen keine nennenswerten Leistungsunterschiede festgestellt werden. Bei RGB fiel jedoch auf, dass YOLOv12 von scratch eine deutlich schlechtere Leistung zeigte als YOLOv9 von scratch, wobei auch die größte Quantilspannweite beobachtet wurde. Diese Ergebnisse legen nahe, dass die Wahl der spektralen Permutation und der Trainingsstrategie einen relevanten Einfluss auf die Modellperformance hat.
+
+% \paragraph{Vergleich der YOLO-Varianten}
+% Experimente auf dem DOTA-Datensatz wurden mit YOLOv3, YOLOv9 und YOLOv12 durchgeführt, jeweils 500 Epochen unter den Hyperparametern aus Tabelle \ref{tab:hyperparameters}. YOLOv3, die älteste Variante, erzielte einen mAP$_{50-95}$ von 0,34 (\ref{sub@fig:yolov3_dota}), während YOLOv12 und YOLOv9 mit 0,40 (\ref{sub@fig:yolov12_dota}) bzw. 0,42 (\ref{fig:DOTA_train_values}) deutlich bessere Ergebnisse lieferten. Die Ergebnisse zeigen eine klare Leistungssteigerung mit neueren Architekturversionen, wie in Abschnitt \ref{sec:milestone_yolo} näher erläutert.
+
+% \paragraph{Einfluss spektraler Permutationen}
+% Zusätzlich wurden die spektralen Permutationen RGBIR, RGB und RGIR mit YOLOv9 und YOLOv12 jeweils von Grund auf trainiert. Alle Permutationen erzielten eine bessere Performance als vortrainierte Modelle. Zwischen RGBIR und RGIR bestanden kaum Unterschiede, während RGB bei YOLOv12 deutlich schlechter abschnitt als bei YOLOv9, begleitet von der größten Quantilspannweite. Diese Ergebnisse unterstreichen den Einfluss von Trainingsstrategie und spektraler Auswahl auf die Modellleistung.
+
+% \paragraph{Vergleich der YOLO-Varianten}
+% Es wurden außerdem weitere Experimente auf Basis des DOTA-Datensatzes durchgeführt, um die Leistungsfähigkeit verschiedener YOLO-Versionen zu evaluieren. Hierbei kamen YOLOv3, YOLOv9 und YOLOv12 zum Einsatz, jeweils für 500 Epochen unter sonst identischen Hyperparametern gemäß Tabelle \ref{tab:hyperparameters}. YOLOv3 stellt dabei eine ältere Variante dar, während YOLOv12 die neueste Architektur aus dem Jahr 2024 repräsentiert; die architektonischen Unterschiede werden in Abschnitt \ref{sec:milestone_yolo} detailliert beschrieben. Die Evaluation der Modelle erfolgte anhand des mAP$_{50-95}$-Metrics, wobei YOLOv3 einen mittleren Wert von 0,34 erreichte (vgl. Abbildung \ref{fig:yolov3_dota}). Im Vergleich dazu zeigte YOLOv12 eine deutlich verbesserte Leistung von 0,40 (\ref{fig:yolov12_dota}), während YOLOv9 den besten Wert von 0,42 erzielte (vgl. Abbildung \ref{fig:DOTA_train_values}). Diese Ergebnisse verdeutlichen eine kontinuierliche Leistungssteigerung mit den neueren YOLO-Versionen.
+
+% \paragraph{Einfluss spektraler Permutationen}
+% Es wurden außerdem weitere Experimente zur Nutzung unterschiedlicher spektraler Permutationen (RGBIR, RGB und RGIR) durchgeführt. Hierbei wurden die Modelle YOLOv9 und YOLOv12 jeweils von Grund auf (scratch) trainiert, unter sonst unveränderten Hyperparametern gemäß Tabelle \ref{tab:hyperparameters}. Es zeigte sich, dass alle drei Permutationen beim Training mit dem DOTA-Datensatz eine bessere Performance erzielten als vortrainierte Modelle. Zwischen RGBIR und RGIR konnten bei beiden YOLO-Versionen keine nennenswerten Leistungsunterschiede festgestellt werden. Bei RGB fiel jedoch auf, dass YOLOv12 von scratch eine deutlich schlechtere Leistung zeigte als YOLOv9 von scratch, wobei auch die größte Quantilspannweite beobachtet wurde. Diese Ergebnisse legen nahe, dass die Wahl der spektralen Permutation und der Trainingsstrategie einen relevanten Einfluss auf die Modellperformance hat.
+
+
+% \paragraph{Vergleich der YOLO-Varianten}
+% Es wurden außerdem weitere Experimente auf Basis des DOTA-Datensatzes durchgeführt, um die Leistungsfähigkeit verschiedener YOLO-Versionen zu evaluieren. Hierbei kamen YOLOv3, YOLOv9 und YOLOv12 zum Einsatz, jeweils für 500 Epochen unter sonst identischen Hyperparametern gemäß Tabelle \ref{tab:hyperparameters}. YOLOv3 stellt dabei die älteste Variante dar, während YOLOv12 die neueste Architektur aus dem Jahr 2024 repräsentiert; die architektonischen Unterschiede werden in Abschnitt \ref{sec:milestone_yolo} detailliert beschrieben. Die Evaluation der Modelle erfolgte anhand des mAP$_{50-95}$-Metrics, wobei YOLOv3 einen mittleren Wert von 0,34 erreichte (vgl. Abbildung \ref{sub@fig:yolov3_dota}). Im Vergleich dazu zeigte YOLOv12 eine deutlich verbesserte Leistung von 0,40 (\ref{sub@fig:yolov12_dota}), während YOLOv9 den besten Wert von 0,42 erzielte (vgl. Abbildung \ref{fig:DOTA_train_values}). Diese Ergebnisse verdeutlichen eine kontinuierliche Leistungssteigerung mit den neueren YOLO-Versionen.
+
+% \paragraph{Einfluss der Scratch-Trainierung}
+% Es wurden außerdem Experimente durchgeführt, um den Einfluss der Scratch-Trainierung zu untersuchen, d.\,h. ob ein Modell von Grund auf trainiert oder ein vortrainiertes Modell verwendet wurde. Hierbei wurden YOLOv9 und YOLOv12 jeweils von scratch trainiert, unter sonst unveränderten Hyperparametern gemäß Tabelle \ref{tab:hyperparameters}. Es zeigte sich, dass alle drei spektralen Permutationen (RGBIR, RGB und RGIR) beim Scratch-Training eine bessere Performance erzielten als vortrainierte Modelle. Zwischen RGBIR und RGIR bestanden bei beiden YOLO-Versionen kaum Unterschiede. Bei RGB schnitt YOLOv12 von scratch jedoch deutlich schlechter ab als YOLOv9 von scratch, begleitet von der größten Quantilspannweite. Diese Ergebnisse verdeutlichen, dass die Wahl der Trainingsstrategie und der YOLO-Version einen signifikanten Einfluss auf die Modellleistung hat.
+
+
+\paragraph{Vergleich der YOLO-Varianten}
+Es wurden außerdem weitere Experimente auf Basis des DOTA-Datensatzes durchgeführt, um die Leistungsfähigkeit verschiedener YOLO-Versionen zu evaluieren. Hierbei kamen YOLOv3, YOLOv9 und YOLOv12 zum Einsatz, jeweils für 500 Epochen unter sonst identischen Hyperparametern gemäß Tabelle \ref{tab:hyperparameters}. YOLOv3 stellt dabei die älteste Variante dar, während YOLOv12 eine neuere Architektur aus dem Jahr 2024 repräsentiert; die architektonischen Veränderungen werden in Abschnitt \ref{sec:milestone_yolo}  beschrieben. Die Evaluation der Modelle erfolgte anhand des mAP$_{50-95}$-Metrics, wobei YOLOv3 einen mittleren Wert von 0,34 erreichte (vgl. Abbildung \ref{fig:yolov3_dota}). Im Vergleich dazu zeigte YOLOv12 eine deutlich verbesserte Leistung von 0,40 (\ref{fig:yolov12_dota}), während YOLOv9 den besten Wert von 0,42 erzielte (vgl. Abbildung \ref{fig:DOTA_train_values}). %Diese Ergebnisse verdeutlichen eine kontinuierliche Leistungssteigerung mit den neueren YOLO-Versionen.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=0.8\textwidth]{images/015Results/add_exp/furth_exp_best_val_on_test.svg}
+    \caption[Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and from scratch (Best validation model on test dataset)]{Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and from scratch. (Best validation model on test dataset). The red dot is the fold, that has the best \acrshort{mAP}@0.5--0.95 at the validation dataset. It turns out that all three spectral permutations achieved better performance in scratch training than pre-trained models. There were hardly any differences between RGBIR and RGIR in both YOLO versions. However, in RGB, YOLOv12 performed significantly worse than YOLOv9 from scratch, accompanied by the largest quantile range. These results illustrate that the choice of training strategy and YOLO version has a significant impact on model performance. (see fig. \ref{fig:add_exp_map50-95:val_on_val}).  (Own representation).}
+    \label{fig:add_exp_map50-95:val_on_test}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=0.8\textwidth]{images/015Results/add_exp/furth_exp_best_val_on_val.svg}
+    \caption[Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and from scratch (Best validation model on validation dataset)]{Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and from scratch. (Best validation model on validation dataset). It turns out that all three spectral permutations achieved better performance in scratch training than pre-trained models. There were hardly any differences between RGBIR and RGIR in both YOLO versions. However, in RGB, YOLOv12 performed significantly worse than YOLOv9 from scratch, accompanied by the largest quantile range. These results illustrate that the choice of training strategy and YOLO version has a significant impact on model performance.  (Own representation).}
+    \label{fig:add_exp_map50-95:val_on_val}
+\end{figure}
+
+
+\paragraph{Einfluss der Scratch-Trainierung}
+Zur Untersuchung des Einflusses der Scratch-Trainierung, also des Trainings von Grund auf im Vergleich zur Nutzung vortrainierter Modelle, wurden YOLOv9 und YOLOv12 unter identischen Hyperparametern gemäß Tabelle \ref{tab:hyperparameters} mit den Permutationen RGBIR, RGB und RGIR trainiert. Es zeigte sich, dass alle drei spektralen Permutationen beim Scratch-Training eine bessere Performance erzielten als vortrainierte Modelle. Zwischen RGBIR und RGIR bestanden bei beiden YOLO-Versionen kaum Unterschiede. Bei RGB schnitt YOLOv12 von scratch jedoch deutlich schlechter ab als YOLOv9 von scratch, begleitet von der größten Quantilspannweite. Diese Ergebnisse deuten darauf hin, dass die Wahl der Trainingsstrategie einen stärkeren Einfluss auf die Modellleistung hat als die verwendete YOLO-Variante.
+
+
+
+
+
+\begin{itemize}
+    \item experimente mit dem dota datensatz auf verschiedene YOLO versionen durchgeführt (v3 und v12) mit 500 epochen, sonst analog zu tab \ref{tab:hyperparameters}
+    \item yolov3 ist die älteste variante yolov12 die nesute (2024). Unterschiede in dne Architekturen wurden in \ref{sec:milestone_yolo} beschrieben
+    \item yolo v3: 0,34 siehe \ref{sub@fig:yolov3_dota}
+    \item yolo v12: 0,40 \ref{sub@fig:yolov12_dota}
+    \item yolo v9: 0,42 \ref{fig:DOTA_train_values}
+    \item yolov3 schneidet mit einem map 50-95 wert von 0,34 mittelmäßig
+    \item yolov12 ist deutlich besser mit 0,40
+    \item yolov9 ist nochmal ein wenig besser mit 0,42
+\end{itemize}
+
+\begin{itemize}
+    \item die Permutationen RGBIR, RGB und RGIR wurden einmal mit yolov9 von Scratch trainiert und einmal mit yolov12 von scratch, sonstige hyperparamter analog zu tab \ref{tab:hyperparameters}
+    \item alle drei permutationen zeigen eine bessere performance bei dem trainning mit dem DOTA Datensatz als vortrainiertes Modell
+    \item kaum unterschiede bei RGBIR und RGIR bei yolov9 von scrathc und yolov12 von scratch; RGB schneidet bei yolov12 von scratch deutlich schlechter ab als yolov9 von scratch (hier auch größte quantilspannweite)
+\end{itemize}

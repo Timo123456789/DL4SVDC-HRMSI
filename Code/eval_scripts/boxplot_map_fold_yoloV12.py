@@ -182,7 +182,7 @@ def create_boxplot_from_sets(set_paths_dict, window_size, bool_arr):
 
     plt.ylabel("mAP@0.5-0.95", fontsize=14)
     plt.xlabel("Model", fontsize=14)
-    plt.xticks(rotation=0, fontsize=12)
+    plt.xticks(rotation=15, fontsize=12)
     plt.yticks(fontsize=12)
     plt.grid(True, axis='y', linestyle='--', alpha=0.5)
     plt.savefig(r"C:\Users\timol\OneDrive - Universität Münster\14. Fachsemester_SS_24\master_thesis\MA-Thesis-Latex\images\015Results\add_exp\best_val_on_val.svg", format="svg", transparent=True)

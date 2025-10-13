@@ -444,3 +444,29 @@ NDVI  & 2 & 0 (0.4467) \\
 
 
 
+\section{Further Experiments}
+
+
+\paragraph{Comparison of YOLO variants} 
+
+Further experiments were also conducted based on the \acrshort{DOTA} dataset to evaluate the performance of different \acrshort{YOLO} versions. \acrshort{YOLO}v3, \acrshort{YOLO}v9 and \acrshort{YOLO}v12 were used, each for 500 epochs under otherwise identical hyperparameters according to Tab. \ref{tab:hyperparameters}. \acrshort{YOLO}v3 is the oldest variant, while \acrshort{YOLO}v12 represents a newer architecture from 2024; the architectural changes are described in section \ref{sec:milestone_yolo}. The models were evaluated using the \acrshort{mAP}@0.5--0.95, with \acrshort{YOLO}v3 achieving an average value of 0.34 (see Figure \ref{fig:yolov3_dota}). In comparison, \acrshort{YOLO}v12 showed a significantly improved performance of 0.40 (\ref{fig:yolov12_dota}), while \acrshort{YOLO}v9 achieved the best value of 0.42 (see Figure \ref{fig:DOTA_train_values}).
+
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=0.8\textwidth]{images/015Results/add_exp/furth_exp_best_val_on_test.svg}
+    \caption[Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and \textit{from scratch} (Best validation model on test dataset)]{Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and \textit{from scratch}. (Best validation model on test dataset). The red dot is the fold, that has the best \acrshort{mAP}@0.5--0.95 at the validation dataset (see fig. \ref{fig:add_exp_map50-95:val_on_val}). It turns out that all three spectral permutations achieved better performance in scratch training than pre-trained models. There were hardly any differences between RGBIR and RGIR in both YOLO versions. However, in RGB, YOLOv12 performed significantly worse than YOLOv9 \textit{from scratch}, accompanied by the largest quantile range. These results suggest that the choice of training strategy has a stronger influence on model performance than the YOLO variant used.  (Own representation).}
+    \label{fig:add_exp_map50-95:val_on_test}
+\end{figure}
+
+
+
+\paragraph{Impact of Pre-training on Model Performance} 
+
+To investigate the influence of scratch training, i.e., training \textit{from scratch}, compared to the use of pre-trained models, YOLOv9 and YOLOv12 were trained under identical hyperparameters (Table \ref{tab:hyperparameters}) with the spectral permutations RGBIR, RGB, and RGIR. All three permutations consistently performed worse than the pre-trained models when trained \textit{from scratch} (see Figs. \ref{fig:add_exp_map50-95:val_on_test} and \ref{fig:add_exp_map50-95:val_on_val}). For both YOLO versions, only minimal differences were observed between RGBIR and RGIR. However, for the RGB permutation, YOLOv12, which was trained \textit{from scratch}, performed significantly worse than YOLOv9 and also had the largest quantile range. %These results show that both the choice of training strategy and the YOLO version have a significant impact on model performance.
+
+
+
+
+
+

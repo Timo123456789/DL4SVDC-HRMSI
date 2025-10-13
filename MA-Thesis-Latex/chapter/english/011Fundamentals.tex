@@ -44,16 +44,16 @@ This is followed by downsampling of the feature maps in so-called pooling layers
 
 \subsection{Backpropagation}
 
-The learning process in deep learning networks is based on the principle of backpropagation \cite{Goodfellow-et-al-2016}. In a forward propagation phase, the input $x$ is propagated through the network, resulting in the output $y$. Then, the errors are gradually fed back through the network by means of backpropagation in order to calculate gradients that are used to update the weights. This method enables efficient optimisation of deep networks, but encounters two central problems in very deep architectures: the vanishing gradient problem and the exploding gradient problem \cite{Alzubaidi2021}.  
+The learning process in deep learning networks is based on the principle of backpropagation \cite{Goodfellow-et-al-2016}. In a forward propagation phase, the input $x$ is propagated through the network, resulting in the output $y$. Then, the errors are fed back through the network step by step using the chain rule by means of backpropagation in order to calculate gradients that are used to update the weights. This method enables efficient optimisation of deep networks, but encounters two key challenges in very deep architectures: In the \textit{vanishing gradient problem}, the gradients become exponentially smaller during backpropagation, which hinders learning. Conversely, the \textit{exploding gradient problem} causes the gradients to grow exponentially, which can lead to instability in training. In practice, both problems are mitigated by appropriate initialisations, activation functions such as \acrshort{ReLU}, batch normalisation or gradient clipping \cite{Alzubaidi2021}.  
 
-\subsection{Vanishing-Gradient-Problem}
+% \subsection{Vanishing-Gradient-Problem}
 
-The Vanishing-Gradient-Problem occurs when the gradients in deep networks become exponentially smaller during backpropagation, making it impossible to perform significant weight updates. In extreme cases, this can cause a network to stop learning altogether. Typical causes are the use of activation functions with small derivatives (such as sigmoid or tanh) or very deep networks with many layers. Possible countermeasures include the use of activation functions such as \acrshort{ReLU}, batch normalisation to stabilise the inputs, or faster hardware that enables training with more complex architectures \cite{Alzubaidi2021}.
+% The Vanishing-Gradient-Problem occurs when the gradients in deep networks become exponentially smaller during backpropagation, making it impossible to perform significant weight updates. In extreme cases, this can cause a network to stop learning altogether. Typical causes are the use of activation functions with small derivatives (such as sigmoid or tanh) or very deep networks with many layers. Possible countermeasures include the use of activation functions such as \acrshort{ReLU}, batch normalisation to stabilise the inputs, or faster hardware that enables training with more complex architectures \cite{Alzubaidi2021}.
     
 
-\subsection{Exploding-Gradient-Problem}
+% \subsection{Exploding-Gradient-Problem}
 
-The Exploding-Gradient-Problem represents the opposite case: here, the gradients grow exponentially during backpropagation, leading to extremely high weight updates, instability and, in the worst case, \acrfullpl{NaN-Value}. These are values that are undefined or cannot be represented. This can be solved, for example, by regularisation techniques, adapted network architectures or gradient clipping \cite{Alzubaidi2021}.
+% The Exploding-Gradient-Problem represents the opposite case: here, the gradients grow exponentially during backpropagation, leading to extremely high weight updates, instability and, in the worst case, \acrfullpl{NaN-Value}. These are values that are undefined or cannot be represented. This can be solved, for example, by regularisation techniques, adapted network architectures or gradient clipping \cite{Alzubaidi2021}.
    
 
 \subsection{Overfitting}
@@ -91,6 +91,7 @@ In contrast, one-Stage detectors such as \Acrfull{YOLO} \cite{redmon2016} or \Ac
 
 
 \section{Milestones and Historical Development of YOLO Architectures}
+\label{sec:milestone_yolo}
 
 \acrfull{YOLO} is a One-Stage detector that was first published in the YOLOv1 version by Redmon et al. (2016) \cite{redmon2016}. This approach represented a novel way of object detection, as it combined accuracy and speed by processing images in a single-Stage network architecture. YOLOv1 thus laid the foundation for real-time applications in image processing and became the standard for subsequent developments \cite{Sapkota2025}.
 
