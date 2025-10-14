@@ -36,14 +36,14 @@
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/013Methods/class_overview_dota.jpg}
-    \caption{Example Classes for DOTA Dataset}
+    \caption{Example Classes for DOTA Dataset \cite{DOTA_Web,DOTA1,DOTA2,DOTA3} }
     \label{fig:DOTA_exClasses}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includesvg[width=0.8\textwidth]{images/015Results/add_exp/furth_exp_best_val_on_val.svg}
-    \caption[Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and \textit{from scratch} (Best validation model on validation dataset)]{Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and \textit{from scratch}. (Best validation model on validation dataset). It turns out that all three spectral permutations achieved better performance in scratch training than pre-trained models. There were hardly any differences between RGBIR and RGIR in both YOLO versions. However, in RGB, YOLOv12 performed significantly worse than YOLOv9 \textit{from scratch}, accompanied by the largest quantile range. These results suggest that the choice of training strategy has a stronger influence on model performance than the YOLO variant used.  (Own representation).}
+    \caption[Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and \textit{from scratch} (Best validation model on validation dataset)]{Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and \textit{from scratch}. (Best validation model on validation dataset). It turns out that all three spectral permutations consistently performed worse in scratch training than pre-trained models. There were hardly any differences between RGBIR and RGIR in both YOLO versions. However, in RGB, YOLOv12 performed significantly worse than YOLOv9 \textit{from scratch}, accompanied by the largest quantile range. These results suggest that the choice of training strategy has a stronger influence on model performance than the YOLO variant used.  (Own representation).}
     \label{fig:add_exp_map50-95:val_on_val}
 \end{figure}
 
