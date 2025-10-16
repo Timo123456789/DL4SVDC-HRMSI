@@ -28,7 +28,7 @@ DATA_YAML="/scratch/tmp/t_liet02/data/cross_validation/${PERM_SET}/fold${FOLD_ID
 echo "Starte YOLOv9-OBB Training fuer Fold ${FOLD_ID}"
 echo "Verwende YAML: ${DATA_YAML}"
 # Training mit yolo CLI starten
-#yolo detect val \
+#yolo train \
 #    model=/scratch/tmp/t_liet02/cross_validation/${PERM_SET}/fold${FOLD_ID}/weights/best.pt \
 #    data=${DATA_YAML} \
 #    split=val \
