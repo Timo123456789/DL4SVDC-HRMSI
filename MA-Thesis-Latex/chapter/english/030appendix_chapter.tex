@@ -1,6 +1,126 @@
 %!TEX root = ../thesis.tex
 \chapter{Appendix}
 
+
+
+\section{Results}
+\subsection{Calculation Bounding Box Area in Percent}
+\label{ap:calc_bb_area_percent}
+
+The total area of the image ($A_{\text{total}}$) is $1024 \times 1024 = 1,048,576 \text{ pixels}^2$.
+
+\subsubsection*{Calculation of Bounding Box Area in Percent}
+The percentage area ($F_{\%}$) is calculated using the following formula:
+$$F_{\%} = \frac{A_{\text{Box}}}{A_{\text{total}}} \times 100\%$$
+
+\subsubsection*{OBB (Oriented Bounding Box)}
+The median area is $\approx 700$ pixels.
+$$F_{\%,\text{obb}} = \frac{700}{1,048,576} \times 100\% \approx 0.06675\%$$
+
+\subsubsection*{ABB (Axis-aligned Bounding Box)}
+The median area is $\approx 1000$ pixels.
+$$F_{\%,\text{abb}} = \frac{1000}{1,048,576} \times 100\% \approx 0.09536\%$$
+
+\FloatBarrier
+\clearpage
+
+\subsection{Additional Figures and Tables}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{cc}
+\hline
+\textbf{Class} & \textbf{Color} \\
+\hline
+\acrfull{GT} & \tikz\fill[GroundTruthColor] (0,0) rectangle (0.5cm,0.3cm); \\
+Car        & \tikz\fill[CarColor] (0,0) rectangle (0.5cm,0.3cm); \\
+Truck      & \tikz\fill[TruckColor] (0,0) rectangle (0.5cm,0.3cm); \\
+Ship       & \tikz\fill[ShipColor] (0,0) rectangle (0.5cm,0.3cm); \\
+Tractor    & \tikz\fill[TractorColor] (0,0) rectangle (0.5cm,0.3cm); \\
+Camping Car & \tikz\fill[CampingCarColor] (0,0) rectangle (0.5cm,0.3cm); \\
+Van        & \tikz\fill[VanColor] (0,0) rectangle (0.5cm,0.3cm); \\
+Vehicle    & \tikz\fill[VehicleColor] (0,0) rectangle (0.5cm,0.3cm); \\
+Pick-up    & \tikz\fill[PickUpColor] (0,0) rectangle (0.5cm,0.3cm); \\
+Plane      & \tikz\fill[PlaneColor] (0,0) rectangle (0.5cm,0.3cm); \\
+\hline
+\end{tabular}
+\caption{Classes with corresponding colors, including \acrshort{GT}}
+\label{tab:class_colors}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{c|c}
+\hline
+\textbf{Vehicle Type} & \textbf{freq\_val} \\
+\hline
+Car & 0 \\
+Pick Up & 1 \\
+Camping Car & 2 \\
+Truck & 3 \\
+Vehicle & 4 \\
+Tractor & 5 \\
+Ship & 6 \\
+Van & 7 \\
+Plane & 8 \\
+\hline
+\end{tabular}
+\caption{Vehicle types and their corresponding freq\_val (Frequency Value) assignments}
+\label{tab:class_freq_val}
+\end{table}
+
+\FloatBarrier
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/DOTA_train_res.png}
+    \caption{Results from \acrshort{DOTA} Training (YOLOv9)}
+    \label{fig:DOTA_train_values}
+\end{figure}
+
+
+
+\begin{figure}[h!]
+    \centering
+    % Erste Subfigure
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/015Results/add_exp/DOTA_v3_results.png}  % Pfad zu deinem Bild
+        \caption{YOLOv3}
+        \label{fig:yolov3_dota}
+    \end{subfigure}
+    \vspace{0.5cm} % Abstand zwischen den Subfiguren
+    % Zweite Subfigure
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/015Results/add_exp/DOTA_v12_results.png}  % Pfad zu deinem Bild
+        \caption{YOLOv12}
+        \label{fig:yolov12_dota}
+    \end{subfigure}
+
+    \caption{DOTA dataset trained on (\ref{sub@fig:yolov3_dota}) YOLOv3  and (\ref{sub@fig:yolov12_dota}) YOLOv12  architectures}
+    \label{fig:gesamtfigur}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/013Methods/class_overview_dota.jpg}
+    \caption{Example Classes for DOTA Dataset \cite{DOTA_Web,DOTA1,DOTA2,DOTA3} }
+    \label{fig:DOTA_exClasses}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=0.8\textwidth]{images/015Results/add_exp/furth_exp_best_val_on_val.svg}
+    \caption[Comparison of \acrshort{mAP}@0.5--0.95 values for \acrshort{RGBIR}, \acrshort{RGB}, \acrshort{RGIR} on different YOLO versions pretrained and \textit{from scratch} (Best validation model on validation dataset)]{Comparison of \acrshort{mAP}@0.5--0.95 values for \acrshort{RGBIR}, \acrshort{RGB}, \acrshort{RGIR} on different \acrshort{YOLO} versions pretrained and \textit{from scratch}. (Best validation model on validation dataset). It turns out that all three spectral permutations consistently performed worse in scratch training than pre-trained models. There were hardly any differences between \acrshort{RGBIR} and \acrshort{RGIR} in both \acrshort{YOLO} versions. However, in \acrshort{RGB}, \acrshort{YOLO}v12 performed significantly worse than \acrshort{YOLO}v9 \textit{from scratch}, accompanied by the largest quantile range. These results suggest that the choice of training strategy has a stronger influence on model performance than the \acrshort{YOLO} variant used.  (Own representation).}
+    \label{fig:add_exp_map50-95:val_on_val}
+\end{figure}
+
+\FloatBarrier
+\clearpage
 \section{Full-Sized Images}
 
 \begin{figure}[h]
@@ -70,119 +190,6 @@
 \input{images/015Results/03ablation/comp_images/figure_full_sized.tex}
 \FloatBarrier
 \clearpage
-
-\section{Results}
-\subsection{Calculation Bounding Box Area in Percent}
-\label{ap:calc_bb_area_percent}
-
-The total area of the image ($A_{\text{total}}$) is $1024 \times 1024 = 1,048,576 \text{ pixels}^2$.
-
-\subsubsection*{Calculation of Bounding Box Area in Percent}
-The percentage area ($F_{\%}$) is calculated using the following formula:
-$$F_{\%} = \frac{A_{\text{Box}}}{A_{\text{total}}} \times 100\%$$
-
-\subsubsection*{OBB (Oriented Bounding Box)}
-The median area is $\approx 700$ pixels.
-$$F_{\%,\text{obb}} = \frac{700}{1,048,576} \times 100\% \approx 0.06675\%$$
-
-\subsubsection*{ABB (Axis-aligned Bounding Box)}
-The median area is $\approx 1000$ pixels.
-$$F_{\%,\text{abb}} = \frac{1000}{1,048,576} \times 100\% \approx 0.09536\%$$
-
-\FloatBarrier
-\clearpage
-
-\subsection{Additional Figures and Tables}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{images/DOTA_train_res.png}
-    \caption{Results from \acrshort{DOTA} Training (YOLOv9)}
-    \label{fig:DOTA_train_values}
-\end{figure}
-
-
-
-\begin{figure}[h!]
-    \centering
-    % Erste Subfigure
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/015Results/add_exp/DOTA_v3_results.png}  % Pfad zu deinem Bild
-        \caption{YOLOv3}
-        \label{fig:yolov3_dota}
-    \end{subfigure}
-    \vspace{0.5cm} % Abstand zwischen den Subfiguren
-    % Zweite Subfigure
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/015Results/add_exp/DOTA_v12_results.png}  % Pfad zu deinem Bild
-        \caption{YOLOv12}
-        \label{fig:yolov12_dota}
-    \end{subfigure}
-
-    \caption{DOTA dataset trained on (\ref{sub@fig:yolov3_dota}) YOLOv3  and (\ref{sub@fig:yolov12_dota}) YOLOv12  architectures}
-    \label{fig:gesamtfigur}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{images/013Methods/class_overview_dota.jpg}
-    \caption{Example Classes for DOTA Dataset \cite{DOTA_Web,DOTA1,DOTA2,DOTA3} }
-    \label{fig:DOTA_exClasses}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includesvg[width=0.8\textwidth]{images/015Results/add_exp/furth_exp_best_val_on_val.svg}
-    \caption[Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and \textit{from scratch} (Best validation model on validation dataset)]{Comparison of \acrshort{mAP}@0.5--0.95 values for RGBIR, RGB, RGIR on different YOLO versions pretrained and \textit{from scratch}. (Best validation model on validation dataset). It turns out that all three spectral permutations consistently performed worse in scratch training than pre-trained models. There were hardly any differences between RGBIR and RGIR in both YOLO versions. However, in RGB, YOLOv12 performed significantly worse than YOLOv9 \textit{from scratch}, accompanied by the largest quantile range. These results suggest that the choice of training strategy has a stronger influence on model performance than the YOLO variant used.  (Own representation).}
-    \label{fig:add_exp_map50-95:val_on_val}
-\end{figure}
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{cc}
-\hline
-\textbf{Class} & \textbf{Color} \\
-\hline
-\acrfull{GT} & \tikz\fill[GroundTruthColor] (0,0) rectangle (0.5cm,0.3cm); \\
-Car        & \tikz\fill[CarColor] (0,0) rectangle (0.5cm,0.3cm); \\
-Truck      & \tikz\fill[TruckColor] (0,0) rectangle (0.5cm,0.3cm); \\
-Ship       & \tikz\fill[ShipColor] (0,0) rectangle (0.5cm,0.3cm); \\
-Tractor    & \tikz\fill[TractorColor] (0,0) rectangle (0.5cm,0.3cm); \\
-Camping Car & \tikz\fill[CampingCarColor] (0,0) rectangle (0.5cm,0.3cm); \\
-Van        & \tikz\fill[VanColor] (0,0) rectangle (0.5cm,0.3cm); \\
-Vehicle    & \tikz\fill[VehicleColor] (0,0) rectangle (0.5cm,0.3cm); \\
-Pick-up    & \tikz\fill[PickUpColor] (0,0) rectangle (0.5cm,0.3cm); \\
-Plane      & \tikz\fill[PlaneColor] (0,0) rectangle (0.5cm,0.3cm); \\
-\hline
-\end{tabular}
-\caption{Classes with corresponding colors, including \acrshort{GT}}
-\label{tab:class_colors}
-\end{table}
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{c|c}
-\hline
-\textbf{Vehicle Type} & \textbf{freq\_val} \\
-\hline
-Car & 0 \\
-Pick Up & 1 \\
-Camping Car & 2 \\
-Truck & 3 \\
-Vehicle & 4 \\
-Tractor & 5 \\
-Ship & 6 \\
-Van & 7 \\
-Plane & 8 \\
-\hline
-\end{tabular}
-\caption{Vehicle types and their corresponding freq\_val (Frequency Value) assignments}
-\label{tab:class_freq_val}
-\end{table}
-
-
 
 
 % \begin{table}[h!]

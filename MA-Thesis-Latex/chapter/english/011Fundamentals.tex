@@ -86,7 +86,7 @@ The localisation and detection of objects in images can basically be achieved us
 
 Two-Stage detectors, such as \Acrfull{R-CNN} \cite{ren2016} or Mask \acrshort{R-CNN} \cite{he2018}, consist of two consecutive processing steps. In the first stage, an \Acrfull{RPN} is used to identify potentially relevant image areas. These suggestions are then further processed in the second stage for object classification and bounding box regression. Two-Stage approaches generally achieve very high accuracy values, but are more computationally intensive and characterised by lower processing speeds \cite{Soviany2018}.
 
-In contrast, =ne-Stage detectors such as \Acrfull{YOLO} \cite{redmon2016} or \Acrfull{SSD} \cite{Liu_2016} treat object detection as a direct regression problem. The input image is processed in a single step, predicting both class memberships and bounding box coordinates. This approach enables significantly higher processing speeds but generally achieves lower accuracy rates compared to Two-Stage detectors \cite{Soviany2018}.
+In contrast, One-Stage detectors such as \Acrfull{YOLO} \cite{redmon2016} or \Acrfull{SSD} \cite{Liu_2016} treat object detection as a direct regression problem. The input image is processed in a single step, predicting both class memberships and bounding box coordinates. This approach enables significantly higher processing speeds but generally achieves lower accuracy rates compared to Two-Stage detectors \cite{Soviany2018}.
 
 
 
@@ -107,7 +107,7 @@ YOLOv8, released in 2023 by Ultralytics \cite{ultralyics_2023}, featured a more 
 
 YOLOv10, developed in 2023 by Chinese scientists \cite{wang2024_yolov10}, presented a novel approach to real-time object detection. By eliminating \acrfull{NMS} and optimising key model components, it overcame the limitations of earlier YOLO versions, resulting in significant improvements in efficiency and performance \cite{wang2024_yolov10}. YOLOv11 further improved the backbone and neck architecture, optimising feature extraction and achieving a balance between precision and computational efficiency \cite{Sapkota2025,ultralyics_yolov11}.
 
-Finally, YOLOv12 utilises an attention-centred approach and implements \acrfull{AA2} and \acrfull{R-ELAN} to further improve feature processing \cite{tian2025,Sapkota2025,yolov12}.
+Finally, YOLOv12 utilises an attention-centred approach and implements \acrfull{AA2} and \acrfull{R-ELAN} to further improve feature processing \cite{tian2025,Sapkota2025,yolo12}.
 
 
 \section{Evaluation Methods}

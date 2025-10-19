@@ -100,7 +100,7 @@ The development of \acrshort{YOLO} across the various versions shows significant
 
 The key strengths of \acrshort{YOLO}v9 lie in its high processing speed and precise object detection, which enable efficient analysis of large data sets.
  
-The variants \acrshort{YOLO}v9u and \acrshort{YOLO}v9e differ primarily in terms of the label format used. \acrshort{YOLO}v9e uses a normalised coordinate system:
+The variants \acrshort{YOLO}v9u and \acrshort{YOLO}v9e differ in terms of label format used and their network architecture. The \acrshort{YOLO}v9u model comprises 32.3 million parameters and has a computational complexity of 122 GFLOPS, while the \acrshort{YOLO}v9e model, with 58.1 million parameters, achieves a higher computational complexity of 192.5 GFLOPS. \acrshort{YOLO}v9e uses a normalised coordinate system:
 
 \hypertarget{eq:yolov9}{}
 \begin{equation}
@@ -130,7 +130,7 @@ The implementation of \acrshort{YOLO}v9u is based on version \acrshort{YOLO}v8.1
 \subsection{YOLOv9e by Ultralytics}
 \label{subsec:yolov9e}
 
-The \acrshort{YOLO}v9 model series from Ultralytics comprises several variants that differ in terms of model size, accuracy and computational complexity \cite{ultralyics_yolov9}. All variants integrate the \acrshort{PGI} and \acrshort{GELAN} architectures developed by \citeauthor{wang2024_sapkota} \cite{wang2024_sapkota} and also support the processing of \acrshort{abb}. The range extends from the compact \acrshort{YOLO}v9t variant with an input image size of $640 \times 640$ pixels, 2 million parameters and 7.7 \acrshortpl{GFLOP}, to the most powerful \acrshort{YOLO}v9e variant with 58.1 million parameters and 192.5 \acrshortpl{GFLOP} (see Table~\ref{tab:yolov9-models}).
+The \acrshort{YOLO}v9 model series from Ultralytics comprises several variants that differ in terms of model size, accuracy and computational complexity \cite{ultralyics_yolov9}. All variants integrate the \acrshort{PGI} and \acrshort{GELAN} architectures developed by \citeauthor{wang2024_sapkota} \cite{wang2024_sapkota} and also support the processing of \acrshortpl{abb}. The range extends from the compact \acrshort{YOLO}v9t variant with an input image size of $640 \times 640$ pixels, 2 million parameters and 7.7 \acrshortpl{GFLOP}, to the most powerful \acrshort{YOLO}v9e variant with 58.1 million parameters and 192.5 \acrshortpl{GFLOP} (see Table~\ref{tab:yolov9-models}).
 
 Due to the highest accuracy achieved (\acrshort{mAP}@0.5-0.95 = 55.6) and the highest computing capacity, the \acrshort{YOLO}v9e model was used for all experiments with axis-aligned bounding boxes. This variant was chosen with the aim of ensuring maximum detection performance during the evaluation. In addition, this version is used because it supports the processing of \acrlongpl{abb}.
 
